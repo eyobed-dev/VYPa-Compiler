@@ -1,0 +1,8 @@
+#!/bin/bash
+# vypcomp script
+ANTLR_JAR=/pub/courses/vyp/antlr-4.7.2-complete.jar
+CLASSPATH=.:./bin:$ANTLR_JAR
+
+# Run the 'Compiler' class inside the 'src' package
+java -cp $CLASSPATH src.Compiler "$@"
+exit $?

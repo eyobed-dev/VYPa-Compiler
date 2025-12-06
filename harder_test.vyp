@@ -1,0 +1,21 @@
+//harder_test.vyp
+class Shape : Object {
+    int x;
+    void setup(int startX) {
+        this.x = startX;
+    }
+}
+
+void main(void) {
+    int result;
+    Shape s;
+    s = new Shape;
+    s.setup(10);
+
+    if (s.x > 5) {
+        result = s.x * 2;
+    } else {
+        result = 0;
+    }
+}
+

@@ -1,0 +1,8 @@
+#!/bin/vypint
+# VYPcode: 1.0
+
+JUMP main
+
+LABEL main
+SET $0, "Hello World\n"
+WRITES $0
