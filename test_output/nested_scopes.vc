@@ -1,0 +1,39 @@
+#!/bin/vypint
+# VYPcode: 1.0
+
+JUMPZ main, 0
+
+LABEL main
+SET $0, 10
+SET [0], $0
+SET $0, "Outer x: "
+WRITES $0
+SET $0, [0]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+SET $0, [0]
+SET [1], $0
+SET $0, 0
+SET $1, [1]
+GTI $0, $1, $0
+JUMPZ L_0, $0
+SET $0, 20
+SET [1], $0
+SET $0, "Inner x: "
+WRITES $0
+SET $0, [1]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+JUMPZ L_1, 0
+LABEL L_0
+LABEL L_1
+SET $0, "Outer x again: "
+WRITES $0
+SET $0, [0]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+SET $0, 0
+

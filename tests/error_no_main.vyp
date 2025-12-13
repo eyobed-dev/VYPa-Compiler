@@ -1,0 +1,4 @@
+// Should fail: no main function
+void foo(void) {
+    print("This is not main\n");
+}

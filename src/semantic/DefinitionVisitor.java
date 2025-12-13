@@ -11,7 +11,7 @@ public class DefinitionVisitor extends VYPlanguageBaseVisitor<Void> {
         initBuiltIns();
     }
 
-    // [cite: 252-269] We must manually add these or "print()" will fail.
+    //embedded functions page 9
     private void initBuiltIns() {
         globalScope.define(new Symbol("print", "void"));
         globalScope.define(new Symbol("readInt", "int"));

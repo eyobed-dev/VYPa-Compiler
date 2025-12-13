@@ -1,0 +1,31 @@
+#!/bin/vypint
+# VYPcode: 1.0
+
+JUMPZ main, 0
+
+LABEL setup
+SET $0, 0
+
+LABEL main
+SET [1], $0
+SET $0, [1]
+SET $0, 10
+SET $0, [1]
+SET [2], $0
+SET $0, 5
+SET $1, [2]
+GTI $0, $1, $0
+JUMPZ L_0, $0
+SET $0, [1]
+SET [2], $0
+SET $0, 2
+SET $1, [2]
+MULI $0, $1, $0
+SET [0], $0
+JUMPZ L_1, 0
+LABEL L_0
+SET $0, 0
+SET [0], $0
+LABEL L_1
+SET $0, 0
+

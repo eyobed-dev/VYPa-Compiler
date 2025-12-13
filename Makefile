@@ -1,5 +1,5 @@
 # Path to ANTLR on Merlin
-ANTLR_JAR=/pub/courses/vyp/antlr-4.7.2-complete.jar
+ANTLR_JAR=/pub/courses/vyp/antlr-4.13.2-complete.jar
 
 # Setup classpath for compilation
 CLASSPATH=.:./bin:$(ANTLR_JAR)

@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Scope {
-    public Scope parent; // The outer scope (e.g., Global is parent of Function)
+    public Scope parent; // The outer scope
     private Map<String, Symbol> symbols = new HashMap<>();
 
     public Scope(Scope parent) {
@@ -13,7 +13,7 @@ public class Scope {
     public void define(Symbol sym) {
         if (symbols.containsKey(sym.name)) {
             System.err.println("Semantic Error: Redefinition of variable '" + sym.name + "'");
-            System.exit(14); // [cite: 39] Error 14: Multiple definition
+            System.exit(14); // page 2 Error 14: Multiple definition
         }
         symbols.put(sym.name, sym);
     }
@@ -25,6 +25,6 @@ public class Scope {
         // If not found here, check the parent (outer scope)
         if (parent != null) return parent.resolve(name);
 
-        return null; // Not found anywhere
+        return null; // Not found
     }
 }

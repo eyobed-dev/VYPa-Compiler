@@ -12,21 +12,21 @@ public class Compiler {
     public static void main(String[] args) {
         if (args.length == 0) {
             System.err.println("Error: No input file.");
-            System.exit(19); // Error 19: Internal error [cite: 42]
+            System.exit(19); //[error 19: internal compiler error : page 2]
         }
 
         try {
             // 1. Read the input file
             CharStream input = CharStreams.fromFileName(args[0]);
 
-            // 2. Split it into words (Lexer)
+            // 2. Split it into tokens (Lexer)
             VYPlanguageLexer lexer = new VYPlanguageLexer(input);
             CommonTokenStream tokens = new CommonTokenStream(lexer);
 
-            // 3. Organize words into sentences (Parser)
+            // 3. Organize tokens into sentences (Parser)
             VYPlanguageParser parser = new VYPlanguageParser(tokens);
 
-            // 4. Start parsing at the 'program' rule
+            // 4. Start parsing at the 'program' rule... questionable...
             parser.program();
 
             // 1. Reset parser to read the tree again
@@ -37,7 +37,7 @@ public class Compiler {
             DefinitionVisitor defVisitor = new DefinitionVisitor();
             defVisitor.visit(tree);
 
-            // 3. Check for Main [cite: 109]
+            // 3. Check for Main [error 14: semantic error : page 2]
             if (defVisitor.globalScope.resolve("main") == null) {
                 System.err.println("Error: Missing main function.");
                 System.exit(14);
@@ -47,7 +47,7 @@ public class Compiler {
             LogicVisitor logicVisitor = new LogicVisitor(defVisitor.globalScope);
             logicVisitor.visit(tree);
 
-            String outputFile = (args.length > 1) ? args[1] : "out.vc"; // [cite: 45]
+            String outputFile = (args.length > 1) ? args[1] : "out.vc"; // [page 2]
 
             CodeGenerator codegen = new CodeGenerator();
             codegen.visit(tree);

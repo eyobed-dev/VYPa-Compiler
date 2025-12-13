@@ -1,0 +1,5 @@
+// Should fail: using undefined variable
+void main(void) {
+    int x = 5;
+    y = x + 10;  // y is not defined
+}

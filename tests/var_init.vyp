@@ -1,0 +1,18 @@
+// Test variable initialization
+void main(void) {
+    int a = 5, b = 10, c;
+    
+    c = a + b;
+    
+    print("a = ");
+    print(a);
+    print("\n");
+    
+    print("b = ");
+    print(b);
+    print("\n");
+    
+    print("c = a + b = ");
+    print(c);
+    print("\n");
+}

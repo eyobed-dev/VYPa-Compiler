@@ -1,0 +1,101 @@
+#!/bin/vypint
+# VYPcode: 1.0
+
+JUMPZ main, 0
+
+LABEL main
+SET $0, 2
+SET [0], $0
+SET $0, 3
+SET [1], $0
+SET $0, 4
+SET [2], $0
+SET $0, [0]
+SET [4], $0
+SET $0, [1]
+SET [5], $0
+SET $0, [2]
+SET $1, [5]
+MULI $0, $1, $0
+SET $1, [4]
+ADDI $0, $1, $0
+SET [3], $0
+SET $0, "2 + 3 * 4 = "
+WRITES $0
+SET $0, [3]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+SET $0, [0]
+SET [4], $0
+SET $0, [1]
+SET $1, [4]
+LTI $0, $1, $0
+JUMPZ L_0, $0
+SET $0, "2 < 3: true\n"
+WRITES $0
+JUMPZ L_1, 0
+LABEL L_0
+LABEL L_1
+SET $0, [1]
+SET [4], $0
+SET $0, [2]
+SET $1, [4]
+GTI $0, $1, $0
+JUMPZ L_2, $0
+SET $0, "3 > 4: true\n"
+WRITES $0
+JUMPZ L_3, 0
+LABEL L_2
+SET $0, "3 > 4: false\n"
+WRITES $0
+LABEL L_3
+SET $0, [0]
+SET [4], $0
+SET $0, 2
+SET $1, [4]
+EQI $0, $1, $0
+JUMPZ L_4, $0
+SET $0, "a == 2: true\n"
+WRITES $0
+JUMPZ L_5, 0
+LABEL L_4
+LABEL L_5
+SET $0, [0]
+SET [4], $0
+SET $0, [1]
+SET $1, [4]
+EQI $0, $1, $0
+NOT $0, $0
+JUMPZ L_6, $0
+SET $0, "a != b: true\n"
+WRITES $0
+JUMPZ L_7, 0
+LABEL L_6
+LABEL L_7
+SET $0, [2]
+SET [4], $0
+SET $0, [0]
+SET $1, [4]
+DIVI $0, $1, $0
+SET [3], $0
+SET $0, "4 / 2 = "
+WRITES $0
+SET $0, [3]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+SET $0, [2]
+SET [4], $0
+SET $0, [1]
+SET $1, [4]
+SUBI $0, $1, $0
+SET [3], $0
+SET $0, "4 - 3 = "
+WRITES $0
+SET $0, [3]
+WRITEI $0
+SET $0, "\n"
+WRITES $0
+SET $0, 0
+

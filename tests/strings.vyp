@@ -1,0 +1,17 @@
+// Test string literals and print
+void main(void) {
+    print("Hello, World!\n");
+    print("Special chars: \"\\\n");
+    print("Tab:\there\n");
+    
+    int x = 42;
+    print("The answer is: ");
+    print(x);
+    print("\n");
+    
+    print("Multiple ");
+    print("strings ");
+    print("on ");
+    print("one ");
+    print("line\n");
+}

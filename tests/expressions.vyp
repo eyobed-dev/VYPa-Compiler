@@ -1,0 +1,46 @@
+// Test complex expressions and operator precedence
+void main(void) {
+    int a = 2;
+    int b = 3;
+    int c = 4;
+    int result;
+    
+    // Test precedence: * before +
+    result = a + b * c;
+    print("2 + 3 * 4 = ");
+    print(result);
+    print("\n");
+    
+    // Test relational operators
+    if (a < b) {
+        print("2 < 3: true\n");
+    }
+    
+    if (b > c) {
+        print("3 > 4: true\n");
+    } else {
+        print("3 > 4: false\n");
+    }
+    
+    // Test equality
+    if (a == 2) {
+        print("a == 2: true\n");
+    }
+    
+    // Test inequality
+    if (a != b) {
+        print("a != b: true\n");
+    }
+    
+    // Test division
+    result = c / a;
+    print("4 / 2 = ");
+    print(result);
+    print("\n");
+    
+    // Test subtraction
+    result = c - b;
+    print("4 - 3 = ");
+    print(result);
+    print("\n");
+}

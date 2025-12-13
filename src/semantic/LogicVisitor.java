@@ -38,7 +38,7 @@ public class LogicVisitor extends VYPlanguageBaseVisitor<Void> {
 
     @Override
     public Void visitBlock(VYPlanguageParser.BlockContext ctx) {
-        // Blocks also create a scope!
+        // Blocks also create a scope
         currentScope = new Scope(currentScope);
         super.visitBlock(ctx); // Visit all statements
         currentScope = currentScope.parent;
@@ -84,7 +84,7 @@ public class LogicVisitor extends VYPlanguageBaseVisitor<Void> {
 
         if (sym == null) {
             System.err.println("Semantic Error: Undefined variable '" + name + "' on line " + ctx.start.getLine());
-            System.exit(14); // [cite: 39] Error 14: Undefined
+            System.exit(14); //  Error 14: Undefined
         }
         return null;
     }

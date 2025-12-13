@@ -1,0 +1,19 @@
+// Test nested scopes and variable shadowing
+void main(void) {
+    int x = 10;
+    print("Outer x: ");
+    print(x);
+    print("\n");
+    
+    // Use if to create a nested scope
+    if (x > 0) {
+        int x = 20;
+        print("Inner x: ");
+        print(x);
+        print("\n");
+    }
+    
+    print("Outer x again: ");
+    print(x);
+    print("\n");
+}

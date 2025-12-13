@@ -1,6 +1,6 @@
 grammar VYPlanguage;
 
-// --- PARSER RULES ---
+// --------------------------------------- PARSER RULES ---------------------------------------
 
 program: definition* EOF;
 
@@ -87,7 +87,7 @@ argList
     : expression (COMMA expression)*
     ;
 
-// --- LEXER RULES ---
+// --------------------------------------- LEXER RULES ---------------------------------------
 
 CLASS: 'class';
 ELSE: 'else';
@@ -126,7 +126,7 @@ RBRACE: '}';
 
 ID: [a-zA-Z_] [a-zA-Z0-9_]*;
 
-INT_LITERAL: '0' | [1-9] [0-9]*;
+INT_LITERAL: '0' | [1-9] [0-9]*;//skip leading zero
 
 STRING_LITERAL: '"' ( ~["\r\n\\] | '\\' . )* '"';
 
