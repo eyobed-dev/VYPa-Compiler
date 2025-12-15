@@ -1,3 +1,7 @@
+/*
+ * Project: VYPacompiler
+ * Authors: xnuriey00, xarchaj00
+ */
 package semantic;
 
 public class Symbol {

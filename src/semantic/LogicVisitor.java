@@ -1,3 +1,8 @@
+
+/*
+ * Project: VYPacompiler
+ * Authors: xnuriey00, xarchaj00
+ */
 package semantic;
 
 import parser.VYPlanguageBaseVisitor;
@@ -53,7 +58,6 @@ public class LogicVisitor extends VYPlanguageBaseVisitor<Void> {
             String name = decl.ID().getText();
             currentScope.define(new Symbol(name, type));
 
-            // TODO: If there is an initialization (int x = 5), check types here
         }
         return null;
     }

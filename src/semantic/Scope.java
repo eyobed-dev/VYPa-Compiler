@@ -1,3 +1,8 @@
+
+/*
+ * Project: VYPacompiler
+ * Authors: xnuriey00, xarchaj00
+ */
 package semantic;
 import java.util.HashMap;
 import java.util.Map;

@@ -1,5 +1,7 @@
 #!/bin/bash
 # vypcomp script
+# Authors: xnuriey00, xarchaj00
+
 ANTLR_JAR=/pub/courses/vyp/antlr-4.13.2-complete.jar
 CLASSPATH=.:./bin:$ANTLR_JAR
 

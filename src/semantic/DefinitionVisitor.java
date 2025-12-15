@@ -1,3 +1,7 @@
+/*
+ * Project: VYPacompiler
+ * Authors: xnuriey00, xarchaj00
+ */
 package semantic;
 
 import parser.VYPlanguageBaseVisitor;
@@ -30,7 +34,7 @@ public class DefinitionVisitor extends VYPlanguageBaseVisitor<Void> {
         // Register the function in the Global Scope
         globalScope.define(new Symbol(name, typeStr));
 
-        return null; // We do NOT visit the body yet. That is Pass 2.
+        return null; // We do NOT visit the body. That is Pass 2.
     }
 
     @Override

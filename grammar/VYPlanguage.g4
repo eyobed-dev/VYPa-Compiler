@@ -1,6 +1,11 @@
+
+/*
+ * Project: VYPacompiler
+ * Authors: xnuriey00, xarchaj00
+ */
 grammar VYPlanguage;
 
-// --------------------------------------- PARSER RULES ---------------------------------------
+// --------------------------------------- PARSER ---------------------------------------
 
 program: definition* EOF;
 
@@ -18,7 +23,7 @@ classMember
     | functionDefinition
     ;
 
-// Fix 1: Handle "void main(void)" and "void main()"
+// Handle void main(void) and void main()
 functionDefinition
     : returnType ID LPAREN (VOID | paramList)? RPAREN block
     ;
@@ -41,7 +46,7 @@ block
 
 statement
     : varDefinition
-    | lvalue ASSIGN expression SEMI      // Fix 2: Allow this.x = val
+    | lvalue ASSIGN expression SEMI      //  Allow this.x = val
     | IF LPAREN expression RPAREN block (ELSE block)?
     | WHILE LPAREN expression RPAREN block
     | RETURN expression? SEMI
@@ -49,7 +54,7 @@ statement
     | SEMI
     ;
 
-// Fix 2 (continued): Define valid left-hand sides for assignment
+// Define valid left-hand sides for assignment
 lvalue
     : ID
     | expression DOT ID  // Covers s.x, this.x, super.x
@@ -60,7 +65,7 @@ varDefinition
     ;
 
 varDecl
-    : ID (ASSIGN expression)? // Supports "int x = 5;" (Extension)
+    : ID (ASSIGN expression)? // Supports int x = 5;
     ;
 
 expression
@@ -87,7 +92,7 @@ argList
     : expression (COMMA expression)*
     ;
 
-// --------------------------------------- LEXER RULES ---------------------------------------
+// --------------------------------------- LEXER ---------------------------------------
 
 CLASS: 'class';
 ELSE: 'else';
