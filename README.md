@@ -34,7 +34,7 @@ The VYP compiler is a multi-phase compiler that processes VYP language source fi
 
 ## Features
 
-- **Object-Oriented Programming**: Support for classes and inheritance
+- **Object-Oriented Programming**: Support for classes and inheritance (Not functional yet)
 - **Functions**: First-class functions with parameters and return values
 - **Data Types**: `int`, `string`, and custom class types
 - **Control Flow**: `if-else` statements and `while` loops
